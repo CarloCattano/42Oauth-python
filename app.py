@@ -39,6 +39,8 @@ def exchange_code_for_token(code, redirect_uri):
     token_url = 'https://api.intra.42.fr/oauth/token'
     client_id = 'u-YOUR_CLIENT_ID-HERE'  # Replace with your actual client ID
     client_secret = 's-YOUR_SECRET_ID-HERE'  # Replace with your actual client secret
+    grant_type = 'authorization_code'
+    data = {
         'grant_type': grant_type,
         'client_id': client_id,
         'client_secret': client_secret,

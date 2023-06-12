@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OAuth2 POC</title>
+</head>
+<body>
+ <h1>OAuth2 POC</h1>
+ <h2> Registration verification </h2>
+ <h3>Blockchain club </h3> 
+ <form id="authForm" action="https://api.intra.42.fr/oauth/authorize" method="GET">
+    <input type="hidden" name="client_id" value="YOUR_ID_HERE">
+    <input type="hidden" name="redirect_uri" value="https://42test.ktano-studio.com/redirect">
+    <input type="hidden" name="response_type" value="code">
+    <input type="hidden" name="scope" value="public">
+    <input type="hidden" name="state" id="stateInput"> 
+    <button type="submit">Authorize</button>
+  </form>  
+	<img src="https://42berlin.de/wp-content/uploads/2022/08/42berlin-thumbnail-scaled.jpg" alt="Monkey face" style="width: 30%; height: auto;">
+  <script>
+
+   // Random string stuff for reasons
+   function generateRandomString(length) {
+     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+     let result = '';
+     for (let i = 0; i < length; i++) {
+       result += characters.charAt(Math.floor(Math.random() * characters.length));
+     }
+     return result;
+   }
+  
+   const stateInput = document.getElementById('stateInput');
+   stateInput.value = generateRandomString(32);
+  
+  </script>
+  
+  <p> VERY basic example implementation. After authorization, it returns a JSON <br>
+  with all the user data that just logged in</p>
+</body>
+</html>
+

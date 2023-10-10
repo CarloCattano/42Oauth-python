@@ -12,14 +12,11 @@
     const code = urlParams.get('code');
     const state = urlParams.get('state');
 
-    // Display the state value
-    document.getElementById('stateParagraph').innerText = 'State: ' + state;
-
     // Make a server-side request to exchange the code for an access token
     const data = {
       grant_type: 'authorization_code',
-      client_id: 'u-ID_HERE'
-      client_secret: 's-SECRET_HERE'
+      client_id: 'u-CLIENT_IF',
+      client_secret: 's-client_secret',
       code: code,
       redirect_uri: 'https://42test.ktano-studio.com/redirect.html' // Same as redirect_uri in the authorization request
     };
@@ -28,7 +25,7 @@
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'SameSite': 'None' // Set SameSite attribute to "None"
+        'SameSite': 'None'
       },
       body: new URLSearchParams(data)
     })

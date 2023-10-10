@@ -7,3 +7,10 @@ the user interested is a student at 42
 
 The test server can be used with campus_users.json, change your campus
 id and tokens accordingly
+
+
+TO DO:
+ - Think about design and possibilities.
+ - implement a filter so only students from a certain campus, get 
+   access to said campus info.
+

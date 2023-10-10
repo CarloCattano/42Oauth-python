@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campus Users List</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .user-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .user-avatar {
+      width: 242x;
+      height: 242px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+	p {
+		font-size: 1.2rem;
+		font-weight: bold;
+		margin: 0;
+		padding: 0;
+
+	}
+
+	.p2 {
+		font-size: 30px;
+		font-weight: bold;
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+</style>
+</head>
+<body>
+  <h1>Students on Campus</h1>
+  <span></span>
+  <div class="grid-container">
+  {% for user in data %}
+    <div class="user-card">
+		<a href="https://profile.intra.42.fr/users/{{ user.login }}">
+			<img src="{{ user.avatar }}" alt="{{ user.login }} avatar" class="user-avatar">
+      <p class=p2> {{ user.name }}</p></a>
+	  <p> {{ user.login }}</p>
+      <p>Location: {{ user.location }}</p>
+      <p>Points: {{ user.correction_point }}</p>
+	  <p>Wallet: {{ user.wallet }}</p>
+	  <p>Cluster: {{ user.floor }}{{user.location[2]}}</p>
+    </div>
+  {% endfor %}
+  </div>
+</body>
+</html>
+

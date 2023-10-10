@@ -4,11 +4,11 @@
   <title>OAuth2 POC</title>
 </head>
 <body>
- <h1>OAuth2 POC</h1>
+ <h1>OAuth2</h1>
  <h2> Registration verification </h2>
- <h3>Blockchain club </h3> 
+ <h3>Intra API tests</h3> 
  <form id="authForm" action="https://api.intra.42.fr/oauth/authorize" method="GET">
-    <input type="hidden" name="client_id" value="YOUR_ID_HERE">
+    <input type="hidden" name="client_id" value="CLIENT_UID-OF-INTRA-APP">
     <input type="hidden" name="redirect_uri" value="https://42test.ktano-studio.com/redirect">
     <input type="hidden" name="response_type" value="code">
     <input type="hidden" name="scope" value="public">
@@ -33,8 +33,7 @@
   
   </script>
   
-  <p> VERY basic example implementation. After authorization, it returns a JSON <br>
-  with all the user data that just logged in</p>
+  <p> Basic api use cases</p>
 </body>
 </html>
 
